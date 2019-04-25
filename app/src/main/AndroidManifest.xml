@@ -9,7 +9,9 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".GamesActivity">
+        <activity android:name="com.joandev.speedrunking.mobile.games.detail.DetailActivity">
+        </activity>
+        <activity android:name=".mobile.games.GamesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
