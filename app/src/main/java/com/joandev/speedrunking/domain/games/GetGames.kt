@@ -6,11 +6,11 @@ import io.reactivex.Scheduler
 import io.reactivex.Single
 
 class GetGames(
-  val repository: GamesRepository,
+  private val repository: GamesRepository,
   threadScheduler: Scheduler,
   postExecutionThread: Scheduler
-) : UseCase<Unit, List<Game>>(threadScheduler, postExecutionThread) {
+) : UseCase<Unit?, List<Game>>(threadScheduler, postExecutionThread) {
 
 
-  override fun buildUseCaseSingle(params: Unit): Single<List<Game>> = repository.getGames()
+  override fun buildUseCaseSingle(params: Unit?): Single<List<Game>> = repository.getGames()
 }
