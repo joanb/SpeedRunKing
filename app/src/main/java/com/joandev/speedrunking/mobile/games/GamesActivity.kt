@@ -17,14 +17,12 @@ class GamesActivity : AppCompatActivity(), GamesPresenter.GamesView {
   }
 
   override fun showGames(games: List<Game>) {
-
+    print("ALLGOOD")
   }
 
   override fun showLoading() {
-    //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
   }
 
   override fun hideLoading() {
-    //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
   }
 }
