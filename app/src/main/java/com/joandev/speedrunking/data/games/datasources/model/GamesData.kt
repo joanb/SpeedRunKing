@@ -7,5 +7,6 @@ class GamesData(
   @SerializedName("data") val gamesData: List<GameRemoteEntity>
 )
 
-
-fun GamesData.mapToDomain() = listOf<Game>()
+fun GamesData.mapToDomain(): List<Game> {
+  return gamesData.map { Game(it.gameName.name, it.gameAssets.logo.uri) }
+}
