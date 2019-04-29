@@ -8,5 +8,10 @@ class GamesData(
 )
 
 fun GamesData.mapToDomain(): List<Game> {
-  return gamesData.map { Game(it.name.international, it.assets.logo.uri, it.links.runUri) }
+  return gamesData.map { gameData ->
+    Game(
+      gameData.name.international,
+      gameData.assets.logo.uri,
+      gameData.links.first { it.type == "runs" }.runsUri)
+  }
 }
