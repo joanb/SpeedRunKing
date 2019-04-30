@@ -11,6 +11,5 @@ class GetGames(
   postExecutionThread: Scheduler
 ) : UseCase<Unit?, List<Game>>(threadScheduler, postExecutionThread) {
 
-
   override fun buildUseCaseSingle(params: Unit?): Single<List<Game>> = repository.getGames()
 }

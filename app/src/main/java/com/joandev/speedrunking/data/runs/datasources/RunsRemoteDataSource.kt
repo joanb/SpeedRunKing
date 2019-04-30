@@ -1,0 +1,13 @@
+package com.joandev.speedrunking.data.runs.datasources
+
+import com.joandev.speedrunking.data.runs.datasources.model.mapToDomain
+import com.joandev.speedrunking.data.runs.datasources.remote.RunsApi
+import com.joandev.speedrunking.domain.runs.model.GameRun
+import io.reactivex.Single
+import retrofit2.Retrofit
+
+class RunsRemoteDataSource(private val retrofit: Retrofit) : RunsDataSource {
+
+  override fun getRunById(runId: String): Single<GameRun> =
+    retrofit.create(RunsApi::class.java).getRunById(runId).map { it.mapToDomain() }
+}

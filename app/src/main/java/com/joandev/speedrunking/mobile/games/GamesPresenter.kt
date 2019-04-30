@@ -19,8 +19,13 @@ class GamesPresenter(private val getGamesUseCase: GetGames) : Presenter<GamesPre
     addDisposable(disposable)
   }
 
+  fun onGameSelected(game: Game) {
+    getView().showGameRuns(game)
+  }
+
   interface GamesView : Presenter.View {
     fun showGames(games: List<Game>)
     fun setupViews()
+    fun showGameRuns(game: Game)
   }
 }
