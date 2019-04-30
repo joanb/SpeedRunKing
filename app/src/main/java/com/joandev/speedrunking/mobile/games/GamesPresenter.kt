@@ -7,6 +7,7 @@ import com.joandev.speedrunking.mobile.Presenter
 class GamesPresenter(private val getGamesUseCase: GetGames) : Presenter<GamesPresenter.GamesView>() {
 
   override fun onViewAttached() {
+    getView().setupViews()
     getView().showLoading()
     val disposable = getGamesUseCase.execute(null).subscribe(
       {
@@ -20,5 +21,6 @@ class GamesPresenter(private val getGamesUseCase: GetGames) : Presenter<GamesPre
 
   interface GamesView : Presenter.View {
     fun showGames(games: List<Game>)
+    fun setupViews()
   }
 }
