@@ -17,7 +17,7 @@ class BestRunActivity : AppCompatActivity(), BestRunPresenter.View {
     setContentView(R.layout.activity_detail)
 
     presenter.attachView(this)
-    presenter.onRunUrlGathered(intent.extras.getString(RUN_URL_KEY))
+    presenter.onGameIdGathered(intent.extras.getString(GAME_ID_KEY))
   }
 
   override fun showRunData(gameRun: GameRun) {
@@ -28,11 +28,11 @@ class BestRunActivity : AppCompatActivity(), BestRunPresenter.View {
   override fun hideLoading() {}
 
   companion object {
-    private const val RUN_URL_KEY = "run_url_key"
+    private const val GAME_ID_KEY = "game_id_key"
 
     fun getIntent(context: Context, runUrl: String): Intent {
       return Intent(context, BestRunActivity::class.java).apply {
-        putExtra(RUN_URL_KEY, runUrl)
+        putExtra(GAME_ID_KEY, runUrl)
       }
     }
   }

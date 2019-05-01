@@ -4,5 +4,5 @@ import com.joandev.speedrunking.domain.runs.model.GameRun
 import io.reactivex.Single
 
 interface RunsRepository {
-  fun getRunById(runId: String): Single<GameRun>
+  fun getBestGameRunById(runId: String): Single<GameRun>
 }

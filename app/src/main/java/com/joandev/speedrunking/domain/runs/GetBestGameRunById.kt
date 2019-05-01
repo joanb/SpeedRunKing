@@ -5,11 +5,11 @@ import com.joandev.speedrunking.domain.runs.model.GameRun
 import io.reactivex.Scheduler
 import io.reactivex.Single
 
-class GetGameRunById(
+class GetBestGameRunById(
   private val repository: RunsRepository,
   threadScheduler: Scheduler,
   postExecutionThread: Scheduler
 ) : UseCase<String, GameRun>(threadScheduler, postExecutionThread) {
 
-  override fun buildUseCaseSingle(params: String): Single<GameRun> = repository.getRunById(params)
+  override fun buildUseCaseSingle(params: String): Single<GameRun> = repository.getBestGameRunById(params)
 }

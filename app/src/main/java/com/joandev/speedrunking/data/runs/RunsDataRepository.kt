@@ -7,7 +7,7 @@ import io.reactivex.Single
 
 class RunsDataRepository(private val remoteDataSource: RunsDataSource) : RunsRepository {
 
-  override fun getRunById(runId: String): Single<GameRun> {
-    return remoteDataSource.getRunById(runId)
+  override fun getBestGameRunById(runId: String): Single<GameRun> {
+    return remoteDataSource.getBestGameRunById(runId)
   }
 }

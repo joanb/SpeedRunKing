@@ -9,7 +9,7 @@ import com.joandev.speedrunking.data.runs.datasources.RunsDataSource
 import com.joandev.speedrunking.data.runs.datasources.RunsRemoteDataSource
 import com.joandev.speedrunking.domain.games.GamesRepository
 import com.joandev.speedrunking.domain.games.GetGames
-import com.joandev.speedrunking.domain.runs.GetGameRunById
+import com.joandev.speedrunking.domain.runs.GetBestGameRunById
 import com.joandev.speedrunking.domain.runs.RunsRepository
 import com.joandev.speedrunking.mobile.games.GamesPresenter
 import com.joandev.speedrunking.mobile.runs.BestRunPresenter
@@ -25,7 +25,7 @@ val appModule = module {
   single<RunsDataSource> { RunsRemoteDataSource(retrofit) }
   single<RunsRepository> { RunsDataRepository(get()) }
 
-  factory { GetGameRunById(get(), Schedulers.io(), AndroidSchedulers.mainThread()) }
+  factory { GetBestGameRunById(get(), Schedulers.io(), AndroidSchedulers.mainThread()) }
   factory { BestRunPresenter(get()) }
 
   factory { GetGames(get(), Schedulers.io(), AndroidSchedulers.mainThread()) }

@@ -8,5 +8,5 @@ import retrofit2.http.Query
 interface RunsApi {
 
   @GET("runs")
-  fun getRunById(@Query("game") runId: String): Single<RunData>
+  fun getBestGameRunById(@Query("game") runId: String): Single<RunData>
 }

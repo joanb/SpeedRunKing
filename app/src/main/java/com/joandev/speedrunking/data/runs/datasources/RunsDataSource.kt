@@ -5,5 +5,5 @@ import io.reactivex.Single
 
 interface RunsDataSource {
 
-  fun getRunById(runId: String): Single<GameRun>
+  fun getBestGameRunById(runId: String): Single<GameRun>
 }
