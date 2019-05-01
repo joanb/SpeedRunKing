@@ -33,7 +33,7 @@ class GamesActivity : AppCompatActivity(), GamesPresenter.GamesView {
   }
 
   override fun showGameRuns(game: Game) {
-    startActivity(BestRunActivity.getIntent(this, game.gameId))
+    startActivity(BestRunActivity.getIntent(this, game.gameId, game.name, game.logoUrl))
   }
 
   override fun showLoading() {}

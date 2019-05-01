@@ -6,7 +6,9 @@ import com.joandev.speedrunking.mobile.Presenter
 
 class BestRunPresenter(private val getBestGameRunById: GetBestGameRunById) : Presenter<BestRunPresenter.View>() {
 
-  override fun onViewAttached() {}
+  override fun onViewAttached() {
+    getView().showGameData()
+  }
 
   fun onGameIdGathered(gameId: String?) = with(getView()) {
     gameId?.let {
@@ -22,7 +24,13 @@ class BestRunPresenter(private val getBestGameRunById: GetBestGameRunById) : Pre
     }
   }
 
+  fun onVideoButtonClick(gameRun: GameRun) {
+    getView().openUrl(gameRun.videoUrl)
+  }
+
   interface View : Presenter.View {
+    fun showGameData()
     fun showRunData(gameRun: GameRun)
+    fun openUrl(videoUrl: String)
   }
 }
