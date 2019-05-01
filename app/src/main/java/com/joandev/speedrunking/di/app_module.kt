@@ -3,7 +3,7 @@ package com.joandev.speedrunking.di
 import com.joandev.speedrunking.data.games.GamesDataRepository
 import com.joandev.speedrunking.data.games.datasources.GamesDataSource
 import com.joandev.speedrunking.data.games.datasources.remote.GamesRemoteDataSource
-import com.joandev.speedrunking.data.retrofit.retrofit
+import com.joandev.speedrunking.data.common.retrofit.retrofit
 import com.joandev.speedrunking.data.runs.RunsDataRepository
 import com.joandev.speedrunking.data.runs.datasources.RunsDataSource
 import com.joandev.speedrunking.data.runs.datasources.RunsRemoteDataSource

@@ -9,5 +9,5 @@ import retrofit2.Retrofit
 class RunsRemoteDataSource(private val retrofit: Retrofit) : RunsDataSource {
 
   override fun getRunById(runId: String): Single<GameRun> =
-    retrofit.create(RunsApi::class.java).getRunById(runId).map { it.mapToDomain() }
+    retrofit.create(RunsApi::class.java).getRunById(runId).map { it.gamesData.sortedBy { it.runTime.timeInSeconds }.mapToDomain() }
 }

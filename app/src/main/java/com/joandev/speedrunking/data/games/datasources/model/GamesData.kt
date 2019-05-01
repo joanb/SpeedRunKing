@@ -12,6 +12,7 @@ fun GamesData.mapToDomain(): List<Game> {
     Game(
       gameData.name.international,
       gameData.assets.logo.uri,
-      gameData.links.first { it.type == "runs" }.runsUri)
+      gameData.id
+    )
   }
 }

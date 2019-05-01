@@ -7,4 +7,7 @@ class RunData(
   @SerializedName("data") val gamesData: List<RunRemoteEntity>
 )
 
-fun RunData.mapToDomain() = GameRun()
+fun List<RunRemoteEntity>.mapToDomain(): GameRun =
+  with(first { it.players.first().name != null && it.videos != null }) {
+    GameRun(players.first().name, runTime.timeInSeconds, videos!!.videoLinks.first().videoUrl)
+  }

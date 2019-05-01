@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 class GameRemoteEntity(
   @SerializedName("names") val name: GameNames,
   @SerializedName("assets") val assets: GameAssets,
-  @SerializedName("links") val links: List<GameLink>
+  @SerializedName("id") val id: String
 )
 
 class GameNames(@SerializedName("international") val international: String)
