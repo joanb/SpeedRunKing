@@ -6,13 +6,19 @@ Things you can find inside the project:
 - Kotlin
 - An approach to Clean arquitecture with S.O.L.I.D practices
 - A selection of Unit and integration tests
-- Some code smells (like abuse of DTOs)
+- Some code smells (like the abuse of DTOs)
 
 Things you won't find inside the project:
 - Good naming overall
 - Acceptable test coverage (even ui package tests have been sacrified)
 - Friendly UX
 
+Libraries:
+- Koin
+- Glide
+- Retrofit
+- RxJava2
+- MockWebServer
 
 
 Comments are appreciated!
