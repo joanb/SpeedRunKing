@@ -1,4 +1,4 @@
-package com.joandev.speedrunking.data.games.datasources.model
+package com.joandev.speedrunking.data.games.model
 
 import com.google.gson.annotations.SerializedName
 
